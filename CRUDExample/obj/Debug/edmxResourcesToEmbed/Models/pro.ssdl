@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebApiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="myProduct">
+    <Key>
+      <PropertyRef Name="product_id" />
+    </Key>
+    <Property Name="product_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="product_cate" Type="nvarchar" MaxLength="50" />
+    <Property Name="product_price" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="newPro">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="category" Type="nvarchar" MaxLength="50" />
+    <Property Name="price" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityContainer Name="WebApiModelStoreContainer">
+    <EntitySet Name="myProduct" EntityType="Self.myProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="newPro" EntityType="Self.newPro" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
